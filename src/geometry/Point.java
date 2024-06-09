@@ -9,9 +9,6 @@ public class Point extends Shape {
 	    private boolean selectable;
 
 	    public Point(){
-	        this.x=5;
-	        this.y=5;
-	        this.selectable=false;
 	    }
 	    public Point(int x, int y) {
 	        this.x = x;
@@ -46,16 +43,7 @@ public class Point extends Shape {
 	    }
 
 
-	    public double rastojanje(int x, int y){
-	        int X =  x;
-	        int Y =  y;
-	        return Math.sqrt((X-getX())*(X-getX()) + (Y-getY())*(Y-getY()));
-	    }
 
-
-	    public String toString(){
-	        return "(" +this.x + "," +this.y + "," +this.selectable + ")";
-	    }
 	    public boolean equalse(Point tacka){
 	        if(this.x == tacka.getX() && this.y == tacka.getY() && this.selectable ==tacka.isSelectable())
 	        {
@@ -76,19 +64,7 @@ public class Point extends Shape {
 	        this.x = this.x +byX;
 	        this.y = this.y + byY;
 	    }
-	    public double comapreTo(Point point1) {
-	        return Math.abs(this.rastojanje(0, 0) - point1.rastojanje(0, 0));
-	    }
 
-		public boolean contains(int x, int y) {
-	        if(this.rastojanje(x, y)<=2)
-	        {
-	            return true;
-	        }
-	        else{
-	            return false;
-	        }
-		}
 		@Override
 		public void draw(Graphics g) {
 			g.drawLine(this.x, this.y, this.x, this.y);

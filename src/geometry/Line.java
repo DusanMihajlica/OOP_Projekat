@@ -46,15 +46,19 @@ public class Line extends Shape {
 	}
 	
 
-	@Override
-	public void moveTo(int x, int y) {
-		// TODO Auto-generated method stub
-		
+	
+	public void moveTo(int x1, int y1, int x2, int y2) {
+		this.startPoint.SetX(x1);
+		this.startPoint.SetY(y1);
+		this.endPoint.SetX(x2);
+		this.endPoint.SetY(y2);
 	}
 
-	@Override
-	public void moveBy(int byX, int byY) {
-		// TODO Auto-generated method stub
+	public void moveBy(int byX1, int byY1, int byX2, int byY2) {
+		this.startPoint.SetX(this.startPoint.getX() + byX1);
+		this.startPoint.SetY(this.startPoint.getY() + byY1);
+		this.endPoint.SetX(this.endPoint.getX() + byX2);
+		this.endPoint.SetY(this.endPoint.getY() + byY2);
 		
 	}
 
@@ -63,6 +67,16 @@ public class Line extends Shape {
 	public void draw(Graphics g) {
 		g.drawLine(this.getStartPoint().getX(), this.getStartPoint().getY(), this.getEndPoint().getX(), this.getEndPoint().getY());
 		
+	}
+	@Override
+	public void moveTo(int x, int y) {
+		// TODO Auto-generated method stub
+		throw new UnsupportedOperationException("Unimplemented method 'moveTo'");
+	}
+	@Override
+	public void moveBy(int byX, int byY) {
+		// TODO Auto-generated method stub
+		throw new UnsupportedOperationException("Unimplemented method 'moveBy'");
 	}
 
 
