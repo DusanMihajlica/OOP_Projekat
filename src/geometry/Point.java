@@ -68,9 +68,6 @@ public class Point extends Shape {
 		@Override
 		public void draw(Graphics g) {
 			g.drawLine(this.x, this.y, this.x, this.y);
-			if(selected)
-				g.drawRect(this.x-3, this.y-3, 6, 6);
-			
 		}
 
 }
